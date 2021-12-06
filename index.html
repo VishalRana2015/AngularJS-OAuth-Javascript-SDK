@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <title>
+            SPA2
+        </title>
+        <script src="../node_modules/angular/angular.js"></script>
+        <script src="../node_modules/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="node_modules/@auth0/auth0-spa-js/dist/auth0-spa-js.development.js"></script>
+        <base href="/"/>
+        <script src="node_modules/angular-cookies/angular-cookies.min.js"></script>
+        <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css" />
+        <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+        <script src="demoLogin.js"></script>
+    </head>
+    <body ng-app="app">
+        <h1 style="text-align: center;">OAuth2 PKCE Application DeMO</h1><br/>
+        <hr/>
+        <ui-view></ui-view>
+    </body>
+</html>

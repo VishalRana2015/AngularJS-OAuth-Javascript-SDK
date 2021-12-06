@@ -1,0 +1,5 @@
+node_modules/
+tempFiles/
+indexCopyu.html
+package-lock.json
+script.js

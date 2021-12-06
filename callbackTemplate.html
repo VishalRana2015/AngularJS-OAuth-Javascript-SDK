@@ -1,0 +1,16 @@
+<div ng-show="loading == true" style="color: green;">
+    Loading access token from the below codes... <br/>
+    Please Wait
+</div>
+<div>
+    Code : {{code}}<br/>
+    state : {{state}} <br/>
+</div>
+<div ng-hide="loading == true">
+    Access Token : {{accessToken}}
+    IDToken : {{iDToken}}
+</div>
+<div ng-show="error && !loading" style="color: red;">
+    Soemthing went wrong while accessing the access token 
+    Exception : {{exp}}
+</div>

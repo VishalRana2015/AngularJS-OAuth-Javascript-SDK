@@ -1,0 +1,48 @@
+This is home Template Page.
+<div ng-show="loadingHome == true" style="color: green;">
+Loading Home ...
+</div>
+<div ng-hide="loadingHome == true">
+    <div ng-hide="hasCode == true">
+        <!-- If there is code in the query then use that to code to obtain access token.-->
+        <div class="" ng-show="authenticated == false">
+            <button class="btn btn-primary" ng-click="loginWithCallback()">Login With Callback</button>
+            <button class="btn btn-primary" ng-click="loginWithPopup()">Login With Popup</button>
+        </div>
+        <div ng-show="authenticated == true">
+            <button ng-click="logout()">Logout</button><br/>
+            <hr/>
+            Access Token : 
+            <div class="row">
+                <pre class="rounded" style="color: greenyellow ; font-weight : normal ; background-color : black;">
+                  <code id="profile-data" class="json"> {{accessToken}}</code></pre>
+              </div>
+            Id Token : <br/>
+            <div class="row" style="color : red ; background-color : black;">
+                <pre class="rounded">
+                  <code id="profile-data" style="color: greenyellow ; font-weight : normal ; background-color : black;" class="json"> {{idToken | json}}</code></pre>
+              </div>
+            User : 
+            <div class="row" style="background-color: black;">
+                <pre class="rounded">
+                  <code id="profile-data" style="color: greenyellow ; font-weight : normal ; background-color : black;" class="json"> {{user | json}}</code></pre>
+              </div>
+        </div>
+    </div>
+    
+    <div ng-show="hasCode == true">
+        Code : {{code}}<br/>
+        State : {{state}}<br/>
+        <div ng-show="loadingAccessToken == true" style="color : green">
+            Loading Access Token... Please wait
+        </div>
+        <div ng-show="errorInLoadingAccessToken == true" style="color: red;">
+            Error in Loading Access Token. 
+        </div>
+    </div>
+</div>
+
+<div ng-show="errorInHome == true" style="color:red">
+    Error while checking isAuthenticated function of auth0,<br/>
+    Please check your internet connection.
+</div>
